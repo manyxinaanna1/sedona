@@ -2,7 +2,7 @@
   font-family: "PT Sans";
   font-style: normal;
   font-weight: 400;
-  src: url("fonts/ptsans-400.woff2") format("woff2");
+  src: url("../fonts/ptsans-400.woff2") format("woff2");
   font-display: swap;
 }
 
@@ -10,7 +10,7 @@
   font-family: "PT Sans";
   font-style: normal;
   font-weight: 700;
-  src: url("fonts/ptsans-700.woff2") format("woff2");
+  src: url("../fonts/ptsans-700.woff2") format("woff2");
   font-display: swap;
 }
 
@@ -47,7 +47,7 @@ body {
   overflow: hidden;
 }
 
-img {
+images {
     max-width: 100%;
     height: auto;
 }
@@ -68,7 +68,7 @@ img {
   margin-bottom: -10px;
 }
 
-.logo-img {
+.logo-images {
   display: block;
 }
 
@@ -102,22 +102,35 @@ img {
 }
 
 .additional-menu {
-display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: flex-end;
-    max-width: 322px;
-
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  max-width: 322px;
 }
 
 .additional-menu-link {
-min-width: 42px;
-  min-height: 42px;
-position: relative;
-    margin-right: 20px;
+  position: relative;
+  display: grid;
+  place-content: center;
+  width: 42px;
+  height: 42px;
+  fill: #000000;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
 }
 
+.additional-menu-link:active {
+  fill: rgba(117, 98, 87, 0.3);
+}
 
+.additional-menu-link:hover {
+  fill: #756257;
+}
+
+.additional-menu-link[disabled] {
+  opacity: 0.3;
+}
 
 .icon-button-counter {
     position: absolute;
@@ -142,49 +155,40 @@ position: relative;
 
 .button {
   display: inline-block;
-  padding: 8px 15px;
-
+  margin: 0;
+  padding: 7px 15px 6px;
   color: #ffffff;
   background-color: #83b3d3;
   border: none;
   border-radius: 4px;
-
   font-family: inherit;
   font-size: 16px;
   font-weight: 700;
   text-align: center;
   text-transform: uppercase;
   text-decoration: none;
+  line-height: 24px;
 }
 
-
-
-
-
-
-
-
-.button_grey {
-color: #FFFFFF;
-background-color: #756257;
+.button-secondary {
+  background-color: #756257;
 }
-.button_grey:hover {
+.button-secondary:hover {
   background-color: #615048;
 }
 
-.button_grey:active {
+.button-secondary:active {
   background-color: #615048;
 }
 
-.button_grey:focus {
+.button-secondary:focus {
   background-color: #615048;
   outline: 3px solid #83b3d3;
 }
 
-.want {
-font-size: 16px;
-line-height: 20px;
-padding: 9px 15px;
+.additional-menu-button {
+  min-width: 160px;
+  margin-left: 20px;
 } 
 
 .search_button {
@@ -272,21 +276,25 @@ line-height: 20px;
 }
 
 
-.image_sedona {
-background: url("../img/index-background.jpg") no-repeat;
-min-height: 485px;
-
+.main-promo {
+  min-height: 485px;
+  background-color: #491213;
+  background-repeat: no-repeat;
+  background-position: 50% calc(50% - 16px), 50% 100%, 50% 50%;
+  background-size: auto auto, 100% auto, cover;
+  background-image: url(../images/welcome.svg), url(../images/background/divider.svg), url(../images/background/promo.jpg);
 }
 
 
 
 .section-title {
-font-size: 30px;
-line-height: 36px;
-text-transform: uppercase;
-font-weight: 700;
-margin-bottom: 31px;
-
+  margin: 0;
+  margin-bottom: 36px;
+  color: #000000;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 36px;
+  text-transform: uppercase;
 }
  
 
@@ -324,11 +332,11 @@ line-height: 21px;
 
 .advantages-list {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  margin: 0;
-  padding: 0;
-
-  list-style: none;
+    grid-template-columns: repeat(3, 1fr);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    counter-reset: advantages;
 }
 
 .advantages-list-inner {
@@ -339,9 +347,11 @@ line-height: 21px;
 }
 
 .advantages-item {
-  padding: 60px;
-
+  display: grid;
+  gap: 30px;
+  min-height: 384px;
   background-color: rgba(131, 179, 211, 0.12);
+  counter-increment: advantages;
 }
 
 .advantages-item:not(.advantages-item-large):nth-child(even) {
@@ -349,13 +359,12 @@ line-height: 21px;
 }
 
 .advantages-item-large {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
   grid-column: 1 / -1;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
   padding: 0;
-
   color: #ffffff;
-  background-color: #83B3D3;
+  background-color: #83b3d3;
 }
 
 .advantages-list-inner .advantages-item:nth-child(even) {
@@ -371,7 +380,33 @@ line-height: 21px;
 }
 
 .advantages-description .advantages-title {
-  color: #ffffff;
+  order: -1;
+  color: #ffffff;-
+}
+
+.advantages-images {
+  grid-column: span 2;
+  width: 100%;
+  height: 0;
+  min-height: 100%;
+  object-fit: cover;
+}
+
+.advantages-item-large:nth-child(2) .advantages-images {
+  order: -1;
+}
+
+.advantages-description {
+  display: grid;
+  align-content: start;
+  gap: 26px;
+  min-height: 384px;
+  padding: 60px;
+  padding-top: 98px;
+}
+
+.advantages-description::before {
+  content: "— №" counter(advantages) " —";
 }
 
 .advantages-img {
@@ -380,14 +415,6 @@ line-height: 21px;
   height: 0;
   min-height: 100%;
   object-fit: cover;
-}
-
-.advantages-item-large:nth-child(2) .advantages-img {
-  order: -1;
-}
-
-.advantages-description {
-  padding: 60px;
 }
 
 .advantages-text {
@@ -420,7 +447,7 @@ color: #333333;
 
 /*Subscribe*/
 .subscribe {
-background: url("../img/background.jpg") no-repeat;
+background: url("../images/background.jpg") no-repeat;
 color: #fff;
 text-align: center;
 
@@ -545,7 +572,7 @@ color: #000;
 
 /*Contacts */
 .hotels {
-background: grey url("../img/catalog-background.jpg") no-repeat;
+background: grey url("../images/catalog-background.jpg") no-repeat;
 color: #fff;
 }
 
@@ -711,7 +738,7 @@ margin: 0 4px;
   padding: 20px;
 }
 
-.card-img {
+.card-images {
   order: -1;
   width: 100%;
   height: 100%;
@@ -873,7 +900,7 @@ display: none;
 
   background-repeat: no-repeat;
   background-position: 50% 50%;
-  background-image: url("../img/close.svg");
+  background-image: url("../images/close.svg");
 }
 
 .modal-close:hover,
@@ -915,7 +942,7 @@ display: none;
 .search-form-date .field-input {
   background-repeat: no-repeat;
   background-position: right 17px top 50%;
-  background-image: url("../img/date.svg");
+  background-image: url("../images/date.svg");
 }
 
 .search-form-date .field-input:not(:placeholder-shown):focus {
@@ -1001,7 +1028,7 @@ display: none;
 }
 
 .number-button-minus::after {
-  background-image: url("../img/minus.svg");
+  background-image: url("../images/minus.svg");
 }
 
 .number-button-plus {
@@ -1009,5 +1036,5 @@ display: none;
 }
 
 .number-button-plus::after {
-  background-image: url("../img/plus.svg");
+  background-image: url("../images/plus.svg");
 }
