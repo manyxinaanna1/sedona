@@ -47,7 +47,7 @@ body {
   overflow: hidden;
 }
 
-images {
+img {
     max-width: 100%;
     height: auto;
 }
@@ -74,17 +74,19 @@ images {
 
 .navigation-list {
   display: flex;
-  flex-wrap: wrap; 
+  flex-wrap: wrap;
   margin: 0;
   padding: 0;
-  list-style-type: none;
+  font-size: 20px;
+  line-height: 26px;
+  font-weight: 700;
+  list-style: none;
 }
 
-.navigation-link {
-  display: block;
-  padding: 17px;
-  color: #000000;
-  text-decoration: none;
+
+.navigation-item {
+  display: flex;
+  align-items: center;
 }
 
 .navigation-item-active {
@@ -99,6 +101,13 @@ images {
   bottom: 0;
   height: 2px;
   background-color: #756257;
+}
+
+.navigation-link {
+  display: block;
+  padding: 17px;
+  color: #000000;
+  text-decoration: none;
 }
 
 .additional-menu {
@@ -257,10 +266,15 @@ font-size: 16px;
 line-height: 20px;
 }
 
-.button-secondary {
-padding: 10px 0;
-font-size: 16px;
-line-height: 20px;
+.search-button {
+  width: 575px;
+  margin-top: 50px;
+}
+
+.button-large {
+  padding: 18px 16px 17px;
+  border-radius: 10px;
+  font-size: 20px;
 }
 /* Main */
 
@@ -299,9 +313,10 @@ line-height: 20px;
  
 
 .section-description {
-font-size: 22px;
-line-height: 36px;
-color: #333333;
+  margin: 0;
+  font-size: 22px;
+  line-height: 26px;
+  color: #333333;
 }
 
 .about_sedona {
@@ -341,17 +356,38 @@ line-height: 21px;
 
 .advantages-list-inner {
   grid-column: 1 / -1;
-
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 0;
+  padding: 0;
   color: #333333;
   background-color: #ffffff;
+  list-style: none;
 }
 
-.advantages-item {
+.advantages-inner-item {
   display: grid;
-  gap: 30px;
+  align-content: start;
+  gap: 20px;
   min-height: 384px;
+  padding: 60px;
+  padding-top: 184px;
+  background-repeat: no-repeat;
+  background-size: 76px 76px;
+  background-position: 50% 88px;
   background-color: rgba(131, 179, 211, 0.12);
-  counter-increment: advantages;
+}
+
+.advantages-inner-item-house {
+  background-image: url(../images/icons/house.svg);
+}
+
+.advantages-inner-item-food {
+  background-image: url(../images/icons/food.svg);
+}
+
+.advantages-inner-item-present {
+  background-image: url(../images/icons/present.svg);
 }
 
 .advantages-item:not(.advantages-item-large):nth-child(even) {
@@ -359,6 +395,7 @@ line-height: 21px;
 }
 
 .advantages-item-large {
+  display: grid;
   grid-column: 1 / -1;
   grid-template-columns: repeat(3, 1fr);
   gap: 0;
@@ -372,16 +409,12 @@ line-height: 21px;
 }
 
 .advantages-title {
+  margin: 0;
   color: #000000;
   font-size: 24px;
   font-weight: 700;
   line-height: 28px;
   text-transform: uppercase;
-}
-
-.advantages-description .advantages-title {
-  order: -1;
-  color: #ffffff;-
 }
 
 .advantages-images {
@@ -390,6 +423,10 @@ line-height: 21px;
   height: 0;
   min-height: 100%;
   object-fit: cover;
+}
+
+.advantages-description .advantages-title {
+  order: -1;
 }
 
 .advantages-item-large:nth-child(2) .advantages-images {
@@ -418,6 +455,7 @@ line-height: 21px;
 }
 
 .advantages-text {
+  margin: 0;
   line-height: 21px;
 }
 
@@ -474,20 +512,26 @@ display: grid;
     grid-template-columns: 1fr 200px;
     margin-top: 48px;
 }
+
+.field {
+  display: flex;
+}
+
 .field-input {
-    width: 100%;
-padding: 8px 20px;
-border: 2px solid transparent;
-    background-color: #f2f2f2;
-    border-radius: 10px 0 0 10px;
-    font-size: 18px;
+  width: 100%;
+  margin: 0;
+  padding: 8px 20px;
+  background-color: #f2f2f2;
+  border: 2px solid transparent;
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 18px;
 }
 
+.subscribe-field .field-input {
+  border-radius: 10px 0 0 10px;
+}
  
-#appointment-email {
-  background: #F2F2F2;
-}
-
 
 /*Footer */
 .page-footer {
@@ -571,29 +615,44 @@ color: #000;
 
 
 /*Contacts */
-.hotels {
-background: grey url("../images/catalog-background.jpg") no-repeat;
-color: #fff;
+.main-header {
+  padding: 35px 72px 82px;
+  color: #ffffff;
+  background-color: #615048;
+  background-image: url(../images/background/main-header.jpg);
+  background-size: cover;
 }
 
 .inner-header-title {
-font-size: 60px;
-line-height: 77px;
-margin: 0;
+  margin: 0;
+  font-size: 60px;
+  line-height: 77px;
 }
 
 .breadcrumbs {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0;
-    margin-bottom: 45px;
-    padding: 0;
-    
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: -10px;
+  margin-bottom: 43px;
+  margin-left: -8px;
+  padding: 0;
+  font-size: 16px;
+  line-height: 21px;
+  list-style: none;
 }
 
-.breadcrumbs-item {
-font-size: 16px;
-line-height: 21px;
+.breadcrumbs-link {
+  display: flex;
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+
+.breadcrumbs-link-home {
+  width: 28px;
+  height: 27px;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-image: url(../images/icons/home.svg);
 }
 
 /*Filter*/
@@ -608,6 +667,8 @@ line-height: 21px;
 }
 
 .filter-title {
+  margin: 0;
+  padding: 0;
   font-size: 20px;
   font-weight: 700;
   line-height: 26px;
@@ -624,15 +685,62 @@ line-height: 21px;
 
 .filter-list {
   margin: 0;
+  margin-top: 30px;
   padding: 0;
-
   list-style: none;
 }
+
+.control {
+  position: relative;
+  display: block;
+}
+
+.control-input {
+  position: absolute;
+  top: 2px;
+  width: 20px;
+  height: 20px;
+  margin: 0;
+  opacity: 0;
+}
+
+.control-lead {
+  display: grid;
+  grid-template-columns: 20px 1fr;
+  gap: 19px;
+  line-height: 24px;
+}
+
+.control-lead::before, .control-lead::after {
+  content: "";
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  height: 20px;
+  margin-top: 2px;
+}
+
+.control-lead::after {
+  display: none;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-image: url(../images/icons/check.svg);
+}
+
+.control-input:checked + .control-lead::after {
+  display: block;
+}
+
+.control-lead::before {
+  background-color: #ffffff;
+  border-radius: 4px;
+}
+
 
 .filter-buttons {
   display: flex;
   flex-direction: column;
-  margin-left: 80px;
+  margin-top: 60px;
+  margin-left: 64px;
 }
 
 .filter-reset {
@@ -645,37 +753,8 @@ line-height: 21px;
   font-size: 18px;
 }
 
-
-.catalog-filter {
-    display: grid;
-    grid-template-columns: 200px 200px 1fr 223px;
-    justify-content: space-between;
-    gap: 17px;
-}
-
-
-
-.catalog-filter-title {
-font-size: 20px;
-line-height: 26px;
-
-}
-.catalog-filter-item {
-font-size: 18px;
-line-height: 24px;
-}
-
-
-.filter-buttons {
-display: flex;
-    flex-direction: column;
-    margin-left: 80px;
-}
-
-
-
-
-.button-resert {background-color: transparent;
+.button-resert {
+  background-color: transparent;
 color: #fff;
 font-size: 20px;
 line-height: 26px;
