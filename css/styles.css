@@ -278,7 +278,7 @@ img {
 }
 
 .advantages-item {
-  counter-increment: advantages 1;
+  counter-increment: advantages 0;
 }
 
 .advantages-list-inner {
