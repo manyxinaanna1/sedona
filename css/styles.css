@@ -319,11 +319,11 @@ img {
   margin: 0;
   padding: 0;
   list-style: none;
-  counter-reset: advantages 1;
+  counter-reset: advantages 0;
 }
 
 .advantages-item {
-  counter-increment: advantages 0;
+  counter-increment: advantages 1;
 }
 
 .advantages-list-inner {
