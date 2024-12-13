@@ -1238,8 +1238,7 @@ img {
   right: 0;
   bottom: 0;
   left: 0;
-  margin: 0 auto;
-  width: 715px;
+  
   z-index: 4;
   place-content: center;
   background-color: rgba(242, 242, 242, 0.8);
@@ -1254,6 +1253,7 @@ img {
   grid-template-columns: 1fr min-content;
   row-gap: 54px;
   width: 715px;
+  margin: 0 auto;
   padding: 70px;
   padding-top: 54px;
   background-color: #ffffff;
@@ -1354,6 +1354,17 @@ img {
   row-gap: 4px;
 }
 
+.field-search .field-title {
+  align-self: center;
+  font-weight: 700;
+}
+
+.field-title-info {
+  display: flex;
+  justify-content: flex-end;
+  margin-left: 20px;
+}
+
 .field-message {
   grid-column: 2 / -1;
   font-size: 16px;
@@ -1376,6 +1387,31 @@ img {
   border-radius: 10px;
   font-size: 16px;
   font-weight: 400;
+}
+
+.field-info-text::before {
+  content: "";
+  position: absolute;
+  top: -9px;
+  left: calc(50% - 10px);
+
+  width: 19px;
+  height: 9px;
+
+  background-image: url("../images/icons/triangle.svg");
+}
+
+.field-info-text::after {
+  content: "";
+  position: absolute;
+  top: -25px;
+  right: 0;
+  left: 0;
+  height: 25px;
+}
+
+.field-info:hover .field-info-text {
+  display: block;
 }
 
 /* Number */
