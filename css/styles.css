@@ -1332,6 +1332,52 @@ img {
   grid-column: 1 / -1;
 }
 
+.field-info {
+  display: block;
+  position: relative;
+  width: 25px;
+  height: 25px;
+  margin-right: 5px;
+  margin-left: 10px;
+  background-color: #83b3d3;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-image: url(../images/icons/info.svg);
+  border-radius: 50%;
+}
+
+.field-search {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  grid-template-rows: 50px;
+  column-gap: 15px;
+  row-gap: 4px;
+}
+
+.field-message {
+  grid-column: 2 / -1;
+  font-size: 16px;
+}
+
+.field-message-error {
+  color: #ff5757;
+}
+
+.field-info-text {
+  position: absolute;
+  top: calc(100% + 15px);
+  left: calc(50% - 128px);
+  z-index: 1;
+  display: none;
+  width: 256px;
+  padding: 15px 20px 23px;
+  color: #ffffff;
+  background-color: #333333;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 400;
+}
+
 /* Number */
 
 .number {
