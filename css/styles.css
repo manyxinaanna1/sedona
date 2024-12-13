@@ -742,10 +742,11 @@ img {
 .control-input {
   position: absolute;
   top: 2px;
-  width: 20px;
-  height: 20px;
+  width: 1px;
+  height: 1px;
   margin: 0;
   opacity: 0;
+  clip: rect(0, 0, 0);
 }
 
 .control-lead {
