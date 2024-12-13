@@ -774,6 +774,18 @@ img {
   display: block;
 }
 
+.control-input:hover+ .control-lead::after {
+  opacity: 0.6;
+}
+
+.control-input:active+ .control-lead::after {
+  opacity: 0.3;
+}
+
+.control-input:focus+ .control-lead::after {
+ outline: 3px solid #83B3D3;
+}
+
 .control-lead::before {
   background-color: #ffffff;
   border-radius: 4px;
@@ -958,6 +970,18 @@ img {
     "stars rate rate";
   row-gap: 16px;
   padding: 20px;
+}
+
+.card:hover {
+  opacity: 0.6;
+}
+
+.card:active {
+  opacity: 0.3;
+}
+
+.card:focus {
+ outline: 3px solid #83B3D3;
 }
 
 .card-img {
