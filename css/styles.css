@@ -681,7 +681,6 @@ img {
 .breadcrumbs-item {
   display: flex;
   align-items: center;
-  gap: 10px;
 }
 
 .breadcrumbs-item + .breadcrumbs-item::before {
