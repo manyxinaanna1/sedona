@@ -260,7 +260,7 @@ img {
 }
 
 .button-large {
-  padding: 18px 16px 17px;
+  padding: 25px 16px 17px;
   border-radius: 10px;
   font-size: 20px;
 }
@@ -286,9 +286,27 @@ img {
   background-image: url(../images/welcome.svg), url(../images/background/divider.svg), url(../images/background/promo.jpg);
 }
 
-.section-title {
+.search-title {
+  margin-top: 6px;
+  margin-bottom: 31px;
+  color: #000000;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 36px;
+  text-transform: uppercase;
+}
+ 
+.search-description {
   margin: 0;
-  margin-bottom: 36px;
+  margin-bottom: 4px;
+  font-size: 22px;
+  line-height: 26px;
+  color: #333333;
+}
+
+.section-title {
+  margin-top: 0;
+  margin-bottom: 31px;
   color: #000000;
   font-size: 30px;
   font-weight: 700;
@@ -298,6 +316,7 @@ img {
  
 .section-description {
   margin: 0;
+  margin-bottom: 4px;
   font-size: 22px;
   line-height: 26px;
   color: #333333;
@@ -383,6 +402,7 @@ img {
 .advantages-title {
   width: 200px;
   margin: 0 auto;
+  margin-top: 7px;
   color: #000000;
   font-size: 24px;
   font-weight: 700;
@@ -438,7 +458,8 @@ img {
 
 .advantages-text {
   margin: 0 auto;
-  width: 250px;
+  
+  width: 220px;
   line-height: 21px;
 }
 
